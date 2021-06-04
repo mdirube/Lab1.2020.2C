@@ -1,16 +1,26 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
+/**#include<iostream>
+#include<cstdlib>
+#include<cstdio>
+#include<ctime>
+using namespace std;*/
 
+/// DECLARACIÓN/PROTOTIPO DE FUNCIONES
+void cargarVector(int v[], int tam);///asigna valores a cada una de las posiciones del vector
 
+void mostrarVector(int v[], int tam);/// muestra lo que contiene cada una de las posiciones del vector
 
+void ponerCero(int v[], int tam);/// pone en 0 todas las posiciones del vector
 
+int posicionNumeroEnVector(int v[],int tam, int numero);/// devuelve la posición que ocupa un número que se //envía como parámetro. Devuelve la primera posición que encuentra el número. Si no lo encuentra devuelve -1
+int contarNumerosRepetidos(int v[], int tam , int numero);///cuenta la cantidad de veces que se repite un //número en el vector
 
-//int contarNumerosRepetidos(int v[], int tam , int numero);///cuenta la cantidad de veces que se repite un //n�mero en el vector
+int maximoVector(int v[], int tam);///devuelve  la posición (primera) que ocupa el máximo en el vector
 
-//int maximoVector(int v[], int tam);///devuelve  la posici�n (primera) que ocupa el m�ximo en el vector
+int minimoVector(int v[], int tam);///devuelve  la posición (primera) que ocupa el mínimo en el vector
 
-//int minimoVector(int v[], int tam);///devuelve  la posici�n (primera) que ocupa el m�nimo en el vector
 
 void cargarAleatorio(int v[], int tam, int limite);///asigna valores aleatorios a cada al vector
 
@@ -18,7 +28,7 @@ void ordenarVector(int v[], int tam );/// ordena de menor a mayor un vector
 
 int sumarVector(int v[], int tam ); /// suma los valores contenidos en el vector
 
-int copiarVector(int v[], int v2[],int tam ); ///copia el vector v en v2
+void copiarVector(int v[], int v2[],int tam ); ///copia el vector v en v2
 
 bool compararVectores(int v[], int v2[],int tam );// compara los dos vectores que recibe. Si son iguales ///devuelve true, si no devuelve false
 
@@ -30,7 +40,6 @@ int posicionNumeroEnVector(int v[],int tam, int numero){
         }
     return -1;
 }
-
 int minimoVector(int v[], int tam){
     int i, posMin=0;
     for(i=1;i<tam;i++){
@@ -40,7 +49,6 @@ int minimoVector(int v[], int tam){
     }
     return posMin;
 }
-
 void ordenarVector(int v[], int tam ){
     int i,j, posmin, aux;
     for(i=0;i<tam-1;i++){
@@ -79,6 +87,7 @@ void mostrarVector(int v[], int tam){
     }
 }
 
+
 int contarNumerosRepetidos(int v[], int numero, int tam){
     int i, cant=0;
     for(i=0;i<tam;i++){
@@ -87,12 +96,14 @@ int contarNumerosRepetidos(int v[], int numero, int tam){
     return cant;
 }
 
+
 void ponerCero(int v[], int tam){
     int i;
     for(i=0;i<tam;i++){
         v[i]=0;
     }
 }
+
 
 int sumarVector(int v[], int tam ){
     int i, suma=0;
@@ -102,7 +113,8 @@ int sumarVector(int v[], int tam ){
     return suma;
 }
 
-int copiarVector(int v[], int v2[],int tam ){
+
+void copiarVector(int v[], int v2[],int tam ){
     int i;
     for(i=0;i<tam;i++){
         v2[i]=v[i];
@@ -117,6 +129,10 @@ bool compararVectores(int v[], int v2[],int tam ){
     return true;
 }
 
-
-#endif // FUNCIONES_H_INCLUDED
-1
+void cargarVector(int v[], int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        cout<<"INGRESE NUMERO: ";
+        cin>>v[i];
+    }
+}
